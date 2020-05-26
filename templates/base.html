@@ -8,6 +8,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>{% block title %}{% endblock %}</title>
+
+    <section class="section section-light">
+        <div class="container">
+            <nav>
+                <input type="checkbox" id="nav" class="hidden">
+                <label for="nav" class="nav-btn">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </label>
+                <div class="logo">
+                    <a href="#">Brand</a>
+                </div>
+                <div class="nav-wrapper">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">My Locker</a></li>
+                        <li><a href="#">Cook Book</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
 </head>
     <body>
         {% block content %}{% endblock %}
