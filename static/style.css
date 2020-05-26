@@ -1,0 +1,133 @@
+body, html{
+    margin: 0px;
+    padding: 0px;
+
+    height:100%;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: blueviolet;
+}
+.pimg1,.pimg2,.pimg3{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+}
+
+.pimg1{
+    background-image:url('./img/pic1.jpg');
+    min-height: 100%;
+}
+.pimg2{
+    background-image:url('./img/pic2.jpg');
+    min-height: 100%;
+}
+.pimg3{
+    background-image:url('./img/pic3.jpg');
+    min-height: 100%;
+}
+
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #f4f4f4 ;
+    color: #666;
+}
+
+.section-dark{
+    background-color: #282e34 ;
+    color: #ddd;
+}
+
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 20px;
+}
+
+.ptext .border.trans{
+    background-color: transparent;
+}
+
+@media(max-width:568px){
+    .pimg1, .pimg2, .pimg3{
+        background-attachment: scroll;
+    }
+}
+
+.slider{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    position: absolute;
+}
+.slide{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    animation: slide 12s infinite;
+    overflow: hidden;
+}
+slide:nth-child(1){
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url('./img/pic1.jpg');
+    background-size: cover;
+    background-position: center;
+   }
+   
+   slide:nth-child(2){
+    animation-delay: 2s;
+    background-image: url('./img/pic2.jpg');
+    background-size: cover;
+    background-position: center;
+   }
+   
+   slide:nth-child(3){
+    animation-delay: 5s;
+    background-image: url('./img/pic3.jpg');
+    background-size: cover;
+    background-position: center;
+   }
+   
+   slide:nth-child(4){
+    left: 0%;
+    animation-delay: 8s;
+    background-image: url('./img/pic2.jpg');
+    background-size: cover;
+    background-position: center;
+   }
+   @keyframes slide {
+    0% { left: 100%; width: 100%; }
+    5% { left: 0%; }
+    25% { left: 0%; }
+    30% { left: -100%; width: 100%; }
+    30.0001% { left: -100%; width: 0%; }
+    100% { left: 100%; width: 0%; }
+   }
