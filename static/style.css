@@ -1,264 +1,73 @@
-body, html{
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    height:100vh;
-    font-size: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face{
+    font-family: 'digital';
+    src: url(/static/fonts/digital-7.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #0d161f;
+}
+
+li, a, button {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    line-height: 1.8em;
-    color: blueviolet;
-    background-size: cover;
-    background-position: center;
-}
-.pimg1,.pimg2,.pimg3{
-    position: relative;
-    opacity: 0.90;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /*
-    fixed = parallax
-    scroll = normal
-    */
-}
-
-.pimg1{
-    background-image:url('./img/pic1.jpg');
-    min-height: 100%;
-}
-.pimg2{
-    background-image:url('./img/pic2.jpg');
-    min-height: 100%;
-}
-.pimg3{
-    background-image:url('./img/pic3.jpg');
-    min-height: 100%;
-}
-.section{
-    text-align: center;
-    padding: 50px 80px;
-}
-
-.section-light{
-    background-color: #f4f4f4 ;
-    color: #666;
-}
-
-.section-dark{
-    background-color: #282e34 ;
-    color: #ddd;
-}
-
-.ptext{
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    color: #000;
-    font-size: 27px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-}
-
-.ptext .border{
-    background-color: rgb(0, 0, 0);
-    color: #fff;
-    padding: 15px;
-}
-
-.ptext .border.trans{
-    background-color: transparent;
-}
-
-@media(max-width:568px){
-    .pimg1, .pimg2, .pimg3{
-        background-attachment: scroll;
-    }
-}
-
-nav{
-    padding: 8px;
-}
-
-.logo{
-    float: left;
-    padding: 8px;
-    margin-left: 16px;
-    margin-top: 8px;
-}
-.logo a{
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 0px;
+    font-size: 16px;
+    color: #ecf0f1;
     text-decoration: none;
 }
-nav ul{
-    float: right;
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 5%;
 }
-nav ul li{
-    display: inline-block;
-    float: left;
+
+.logo  {
+    cursor: pointer;
+    margin-right: auto;
 }
-nav ul li:not(:first-child){
-    margin-left: 48px;
-}
-nav ul li:last-child{
-    margin-right: 24px;
-}
-nav ul li a{
-    display: inline-block;
-    outline: none;
-    color: #000;
-    text-transform: uppercase;
+.name{
+    margin-right: 1025px;
+    font-family: 'digital', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: #ecf0f1;
     text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 1.2px;
-    font-weight: 600;
 }
-@media screen and (max-width: 864px){
-    .logo{
-        padding: 0px;
-    }
-    .nav-wrapper{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: #fff;
-        opacity: 0;
-        transition: all 0.2s ease;
-    }
-    .nav-wrapper ul{
-        position: absolute;
-        top: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-    }
-    .nav-wrapper ul li{
-        display: block;
-        float: none;
-        width: 100%;
-        text-align: right;
-        margin-bottom: 10px;
-    }
-    .nav-wrapper ul li:nth-child(1) a {
-        transition-delay: 0.2s;
-    }
+.nav_links{
+    list-style: none;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover{
+    color: #00BFFF;
+}
 
-    .nav-wrapper ul li:nth-child(2) a {
-            transition-delay: 0.3s;
-    }
-
-    .nav-wrapper ul li:nth-child(3) a {
-            transition-delay: 0.4s;
-    }
-
-    .nav-wrapper ul li:nth-child(4) a {
-            transition-delay: 0.5s;
-    }
-
-    .nav-wrapper ul li:not(:first-child) {
-            margin-left: 0;
-    }
-
-    .nav-wrapper ul li a {
-            padding: 10px 24px;
-            opacity: 0;
-            color: #000;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            transform: translateX(-20px);
-            transition: all 0.2s ease;
-    }
-
-    .nav-btn {
-            position: fixed;
-            right: 10px;
-            top: 10px;
-            display: block;
-            width: 48px;
-            height: 48px;
-            cursor: pointer;
-            z-index: 9999;
-            border-radius: 50%;
-    }
-
-    .nav-btn i {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: #000;
-            border-radius: 2px;
-            margin-left: 14px;
-    }
-
-    .nav-btn i:nth-child(1) {
-            margin-top: 16px;
-    }
-
-    .nav-btn i:nth-child(2) {
-            margin-top: 4px;
-            opacity: 1;
-    }
-
-    .nav-btn i:nth-child(3) {
-            margin-top: 4px;
-    }
-    }
-
-    #nav:checked + .nav-btn {
-    transform: rotate(45deg);
-    }
-
-    #nav:checked + .nav-btn i {
-    background: #000;
-    transition: transform 0.2s ease;
-    }
-
-    #nav:checked + .nav-btn i:nth-child(1) {
-    transform: translateY(6px) rotate(180deg);
-    }
-
-    #nav:checked + .nav-btn i:nth-child(2) {
-    opacity: 0;
-    }
-
-    #nav:checked + .nav-btn i:nth-child(3) {
-    transform: translateY(-6px) rotate(90deg);
-    }
-
-    #nav:checked ~ .nav-wrapper {
-    z-index: 9990;
-    opacity: 1;
-    }
-
-    #nav:checked ~ .nav-wrapper ul li a {
-    opacity: 1;
-    transform: translateX(0);
-    }
-
-    .hidden {
-    display: none;
-    }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
+button{
+    padding: 9px 25px;
+    background-color:#00BFFF;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-left: 20px;
+}
+button:hover{
+    background-color: rgba(0,136,169,0.8);
+}
+img {
+    height:85px;
+    width: 45px;
+}
 
